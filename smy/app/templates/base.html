@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	{% block title %}{% endblock title %}
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/base.css')}}">
+	<script type="text/javascript" src="{{url_for('static', filename='js/base.js')}}"></script>
+	{{ moment.include_jquery() }}
+    {{ moment.include_moment() }}
+
+        <!--使用中文,默认是英语的-->
+　　{{ moment.lang("zh-CN") }} 
+	{{ pagedown.include_pagedown() }}
+</head>
+<body>
+	<div class="nav" id="nav">
+		<ul class="list1">
+			<li class="nav-title nav-title1"><a href="/">SMY</a></li>
+			<li class="nav-title nav-title2"><a href="/">MYBLOG</a></li>
+			<li class="nav-title nav-title3"><a href="/">ABOUTME</a></li>
+		</ul>
+		<form class="navbar-form" role="search">
+	        <input type="text" class="form-control" placeholder="Search">
+        	<button type="submit" class="btn">Submit</button>
+        </form>
+		<ul class="list2">
+			{% if current_user.is_authenticated %}
+				<li class="nav-title username"><a href="/" id="usrname">{{current_user.username}}</a>
+					<ul class="post">
+						<li><a href="/writepost">发博文</a></li>
+						<li class="signout"><a href="{{url_for('main.logout')}}">SIGNOUT</a></li>
+					</ul>
+				</li>
+			{% else %}
+				<li class="nav-title nav-title4"><a href="{{url_for('main.login')}}" id="signs">SIGNIN</a></li>
+			{% endif %}
+		</ul>
+	</div><!--nav finish-->
+
+
+	<div class="container">
+      <div class="co-box">
+          <h1>Hello, I am SMY</h1>
+          <p>wanna know more , please click</p>
+          <button type="submit" class="co-btn">关于我</button>
+      </div>
+    </div><!--container finish-->
+
+	
+	
+
+	{# 引入moment.js库 #}
+	{# {% block scripts %} #}
+	{# {{ super() }} #}
+	{# {{ moment.include_moment() }} #}
+	{# {% endblock %} #}
+
+	{% block mainbody %}
+	{% endblock mainbody %}
+
+	<div class="footer">
+		<div class="left-footer">
+			<p class="p1">Designed and built with all the love in the world by the Mr.<a href="/">ALJUN</a>>.</p>
+			<p class="p2">@SERVER BY NGINX AND POWER BY DIGITALOCEAN.</p>
+			<p class="p3">© COPYRIGHT BY GAGASALAMER 2015</p>
+		</div>
+		<div class="right-footer">
+			<h1>CONTACT ME</h1>
+			<ul>
+				<li><a href="/">WECHAT</a></li>
+				<li><a href="/">WEIBO</a></li>
+				<li><a href="/">GITHUB</a></li>
+				<li><a href="/">EMAIL:contactsalamer@163.com</a></li>
+			</ul>
+		</div>
+	</div><!--footer finish-->
+
+	// 	<script type="text/javascript">
+	// window.onload=function(){
+	// 	var lo_box = document.getElementById("login");
+	// 	var sign = document.getElementById("signs");
+	// 	if(document.getElementById("usrname")){
+	// 		lo_box.style.display = "none";
+	// 	}
+	// 	else {
+	// 		sign.onclick=function(){
+	// 		lo_box.style.display = "block";
+	// 		};
+	// 	}
+	// }
+	// </script>
+</body>
+</html>

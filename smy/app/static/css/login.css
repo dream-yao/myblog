@@ -1,0 +1,65 @@
+
+body{
+	background: url('http://cdn01.baidu-img.cn/timg?image_search&quality=80&size=b10000_10000&sec=1474447892&di=582b24ff88a0331d93afaa5d49661a9f&imgtype=jpg&src=http%3A%2F%2Fimg0.bdstatic.com%2Fimg%2Fimage%2Fshouye%2Fxinshouye%2Fzhongqiujie915.JPG');
+}
+
+.login{
+	width: 383px;
+	height: 275px;
+	position: fixed;
+	top: 104px;
+	left: 529px;
+	border:1px solid #d6e9c6;
+	border-radius: 5px;
+	background-color: #edeff1;
+	/*display: none;*/
+}
+
+.login .lo-title{
+	height: 40px;
+	background-color: #dff0d8;
+}
+
+.login .lo-title .tag{
+	font-size: 20px;
+	color: #3c763d;
+	line-height: 45px;
+	padding-left: 22px;
+}
+
+.login .lo-container{
+	height: 235px;
+	margin-top: 20px;
+}
+
+.form-control1,.form-control2,
+.form-control3{
+	width: 300px;
+	height: 45px;
+	margin-left:39px;
+	border-radius: 5px;
+	border: 1px solid #bdc3c7;
+	margin-top: 10px;
+}
+
+.checkbox{
+	margin-left: 39px;
+	margin-top: 10px;
+	
+}
+
+.checkbox input{
+	display: block;
+	float: left;
+	margin-right: 10px;
+}
+
+.form-control1,.form-control2{
+	font-size: 17px;
+}
+
+.form-control3{
+	color: #fff;
+	background-color: #48c9b0;
+	
+}

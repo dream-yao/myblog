@@ -1,0 +1,9 @@
+<div class="tag" style="float:right;width:260px;height:500px;background:#fff;position:absolute; top: 390px;left: 965px;border: 1px solid rgba(0,0,0,0,3);border-radius: 5px;">
+	<div style="width: 260px;height: 20%;background:red; font-size: 30px; text-align: center">Category
+	</div>
+	<ul>
+		{% for cate in cates %}
+			<li><a href="/category/{{cate.tag}}">{{cate.tag}}</a><span style="font-size: 20px;float:right;padding-right: 20px;">{{cate.count}}</span></li>
+		{% endfor %}
+	</ul>
+</div>

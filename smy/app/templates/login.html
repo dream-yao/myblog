@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/login.css')}}">
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+	<div class="login" id="login">
+		<div class="lo-title">
+			<label class="tag">SIGN IN</label>
+			<label class="icon"></label>
+		</div>
+		<div class="lo-container">
+			<form method="POST">
+				{{form.hidden_tag()}}
+				{{form.username(class="form-control1")}}
+				{{form.password(class="form-control2")}}
+				{{form.remember_me(class="check")}}
+				{{form.submit(class="form-control2")}}
+				<!-- <input type="text" class="form-control1" placeholder="Search">
+				<input type="text" class="form-control2" placeholder="Search">
+				<div class="checkbox">
+					<span class="icon"></span>
+					<input type="check">Keep alive</input>
+				</div>
+				<input type="submit" class="form-control3" placeholder="Search"> -->
+
+			</form>
+		</div>
+	</div><!--login finish-->
+</body>
+</html>
