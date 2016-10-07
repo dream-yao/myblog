@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% import "_macros.html" as macros %}
+{% block mainbody %}
+{% include "_posts.html" %}
+<div class="pagination">
+{{ macros.pagination_widget(pagination, '.index') }}
+</div>
+{% include "_categorys.html" %}
+{% endblock mainbody %}

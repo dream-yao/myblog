@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+{% block mainbody %}
+	<div class="row" style="margin: 20px;margin-left: 90px;margin-right: 30px;">
+		{% include "_categorys.html" %}
+		{% include "_posts.html" %}
+	</div>
+	<div class="pagination">
+		{{ macros.pagination_widget(pagination, '.index') }}
+	</div>
+{% endblock mainbody %}

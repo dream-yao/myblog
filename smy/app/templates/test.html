@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wangEditor2 test</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/wangEditor.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/materialize.min.css')}}" media="screen,projection">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" media="screen,projection">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+	<div id="div1">
+    <p>请输入内容...</p>
+	</div>
+
+
+<!--这里引用jquery和wangEditor.js-->
+<script type="text/javascript" src="http://cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/wangEditor.min.js')}}"></script>
+<script type="text/javascript">
+    var editor = new wangEditor('div1');
+    editor.create();
+</script>
+</body>
