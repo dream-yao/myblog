@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% import "_macros.html" as macros %}
 {% block mainbody %}
+<<<<<<< HEAD
 	<div class="row" style="margin: 20px;margin-left: 90px;margin-right: 30px;">
 		{% include "_categorys.html" %}
 		{% include "_posts.html" %}
@@ -8,4 +9,12 @@
 	<div class="pagination">
 		{{ macros.pagination_widget(pagination, '.index') }}
 	</div>
+=======
+{% include "_posts.html" %}
+<div class="pagination">
+{{ macros.pagination_widget(pagination, '.index') }}
+</div>
+{% include "_categorys.html" %}
+
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
 {% endblock mainbody %}

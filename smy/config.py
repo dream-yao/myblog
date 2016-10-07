@@ -14,7 +14,11 @@ class Config:
 
 	FLASKY_POSTS_PER_PAGE = 10
 	FLASKY_FOLLOWERS_PER_PAGE = 20
+<<<<<<< HEAD
 	FLASKY_COMMENTS_PER_PAGE = 5
+=======
+	#FLASKY_COMMENTS_PER_PAGE = 5
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
 	@staticmethod
 	def init_app(app):
 		pass

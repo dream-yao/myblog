@@ -14,7 +14,11 @@
 			<article class="article the-font">
 				<h2>{{ post.title }}</h2>
 				<p><small><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><span style="color:#8C8C8C;">{{ post.timestamp }}</span></small></p>
+<<<<<<< HEAD
 				{# <div class="post-alert">本博客采用创作共用版权协议, 要求署名、非商业用途和保持一致. 转载本博客文章必须也遵循署名-非商业用途-保持一致的创作共用协议</div> #}
+=======
+				<div class="post-alert">本博客采用创作共用版权协议, 要求署名、非商业用途和保持一致. 转载本博客文章必须也遵循署名-非商业用途-保持一致的创作共用协议</div>
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
 				
 				<p>{{ post.body|safe }}</p>
 				
@@ -25,6 +29,7 @@
 				</div>
 				{% endfor %}
 				<a href="{{url_for('main.index')}}" class="btn btn-xs " style="float:right">返回首页<span class=" glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+<<<<<<< HEAD
 				{% if current_user.is_authenticated %}
 				<a href="/editpost/{{post.id}}" class="btn btn-xs " style="float:right">编辑<span class=" glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
 				<a href="/deletepost/{{post.id}}" class="btn btn-xs " style="float:right">删除<span class=" glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
@@ -33,6 +38,23 @@
 			<article class="article the-font">
 				<div class="ds-share flat" data-thread-key="{{ post.id }}" data-title="{{ post.title }}" data-images="http://7xlen8.com1.z0.glb.clouddn.com/avatar.jpg" data-url="/post/{{ post.id }}"></div>
 			</article>
+=======
+				<a href="/editpost/{{post.id}}" class="btn btn-xs " style="float:right">编辑<span class=" glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+				<a href="/deletepost/{{post.id}}" class="btn btn-xs " style="float:right">删除<span class=" glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+				
+			</article>
+			<article class="article the-font">
+				<div class="ds-share flat" data-thread-key="{{ post.id }}" data-title="{{ post.title }}" data-images="http://7xlen8.com1.z0.glb.clouddn.com/avatar.jpg" data-url="/post/{{ post.id }}"></div></article>
+		    <div class="ds-share-inline">
+			      <ul  class="ds-share-icons-16">
+				      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+				        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+				        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+				        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+				        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+			       </ul>
+		      <div class="ds-share-icons-more"></div>
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
 		      
 	    </div>
 	  </div>

@@ -1,5 +1,9 @@
 {% macro pagination_widget(pagination, endpoint) %}
+<<<<<<< HEAD
 	<ul class="pagination" style="margin-left: 90px;">
+=======
+	<ul class="pagination">
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
 		<li{% if not pagination.has_prev %} class="disabled"{% endif %}>
 			<a href="{% if pagination.has_prev %}{{ url_for(endpoint,
 			page = pagination.page - 1, **kwargs) }}{% else %}#{% endif %}">

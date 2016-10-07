@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {# {% extends "base.html" %}
 {% block mainbody %} #}
 {# 
@@ -6,6 +7,16 @@
 	{# <div class="col-md-12">
 		<div style="box-shadow:5px 5px 20px #CCC;background-color:white;padding:20px 30px;margin-bottom:40px;">
 		<h2 class="text-center">TO WRITE A BLOG!</h2> #}
+=======
+{% extends "base.html" %}
+{% block mainbody %}
+{# 
+<div class="container">
+<div class="row"> #}
+	<div class="col-md-12">
+		<div style="box-shadow:5px 5px 20px #CCC;background-color:white;padding:20px 30px;margin-bottom:40px;">
+		<h2 class="text-center">TO WRITE A BLOG!</h2>
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
 		{# {% if messages %}
 		{% for message in messages %}
 		<p class="alert alert-warning">{{ message }}</p>
@@ -16,9 +27,15 @@
 		{{ error }}
 		{% endfor %}
 		{% endmacro %} #}
+<<<<<<< HEAD
 			{# <form class="form-horizontal" method="POST"> #}
 				{# {{ form.csrf_token }} #}
       {#   {{form.hidden_tag()}}
+=======
+			<form class="form-horizontal" method="POST">
+				{# {{ form.csrf_token }} #}
+        {{form.hidden_tag()}}
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
 				<div class="form-group">
     					<label for="inputEmail3" class="col-sm-1 control-label">{{ form.title.label }}</label>
     						<div class="col-sm-11">
@@ -30,7 +47,11 @@
     						<div class="col-sm-11">
       						{{ form.body(class="form-control",placeholder="the body") }}
    						 </div>
+<<<<<<< HEAD
   			</div> #}
+=======
+  			</div>
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
   				{# <!--<div class="form-group">
     					<label for="inputEmail3" class="col-sm-1 control-label">{{ form.summury.label }}</label>
     						<div class="col-sm-11">
@@ -38,7 +59,11 @@
    						 </div>
   				</div>--> #}
   				
+<<<<<<< HEAD
                      {#    <div class="form-group">
+=======
+                        <div class="form-group">
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
                           <label for="inputEmail3" class="col-sm-1 control-label">{{ form.category.label }}</label>
                               <div class="col-sm-11">
                                   {% for category in the_category %}
@@ -54,20 +79,33 @@
                 <div class="col-sm-11">
                   {{ form.category(class="form-control",placeholder="the category", id="categorys") }}
                </div>
+<<<<<<< HEAD
           </div> #}
   				
   				<!--<input type="submit" value="Go" class="btn btn-large btn-block btn-primary">-->
          
         {#   {{form.submit(class="btn btn-large btn-block btn-primary")}}
+=======
+          </div>
+  				
+  				<!--<input type="submit" value="Go" class="btn btn-large btn-block btn-primary">-->
+         
+          {{form.submit(class="btn btn-large btn-block btn-primary")}}
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
 			</form>
 			
 		</div>
 		
+<<<<<<< HEAD
   	</div> #}
+=======
+  	</div>
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
   	
 {# </div>
 </div> #}
 <script type="text/javascript">
+<<<<<<< HEAD
 // window.onload = function(){
 //   console.log('hrllo')
 //   var cates = document.getElementsByClassName("cates");
@@ -159,6 +197,8 @@
     // editor.create();
 </script>
 <script type="text/javascript">
+=======
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
 window.onload = function(){
   console.log('hrllo')
   var cates = document.getElementsByClassName("cates");
@@ -173,6 +213,13 @@ window.onload = function(){
 
 </script>>
 
+<<<<<<< HEAD
     <!--<script type="text/javascript" src="../dist/js/wangEditor.min.js"></script>-->
 </body>
 </html>
+=======
+
+
+
+{% endblock %}
+>>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
