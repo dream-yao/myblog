@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-<<<<<<< HEAD
 	<title>login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>	
@@ -11,12 +10,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body style="background: url(http://cdn01.baidu-img.cn/timg?image_search&quality=80&size=b10000_10000&sec=1475716480&di=9227038e2b822edc84ffa3e1464981fe&imgtype=jpg&src=http%3A%2F%2Fimg0.bdstatic.com%2Fimg%2Fimage%2Fshouye%2Fxinshouye%2FPC928.jpg)">
-=======
-	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/login.css')}}">
-</head>
-<body>
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     <ul class=flashes>
@@ -26,7 +19,6 @@
     </ul>
   {% endif %}
 {% endwith %}
-<<<<<<< HEAD
 <div class="row" style="margin-top: 90px">
     <div class="col s4 offset-s4">
       <form class="card-panel login-panel" method="POST">
@@ -34,60 +26,30 @@
 				<div class="row">
 	        <div class="input-field col s12">
 	        {{form.username(class="validate",id="email")}}
-	          {# <input id="email" type="email" class="validate" v-model="userEmail"> #}
-	          <label for="email">请输入用户名</label>
+	         <label for="email">请输入用户名</label>
 	        </div>
 	      </div>
 
 	      <div class="row">
 	        <div class="input-field col s12">
 	        {{form.password(class="validate",id="password")}}
-	          {# <input id="password" type="password" class="validate" v-model="userPsd"> #}
-	          <label for="password">请输入密码</label>
+	         <label for="password">请输入密码</label>
 	       </div>
 	      </div>
 	       <div class="row">
 	        <div class="input-field">
 	        {{form.remember_me(class="filled-in",id="filled-in-box")}}
-	           {# <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" /> #}
-      		   <label for="filled-in-box">Keep alive</label>
+	    	   <label for="filled-in-box">Keep alive</label>
 	       </div>
 	       </div>
-	      <!-- <p class="rounded"></p> -->
 	      <div class="row" style="margin-top: 50px">
 	      {{form.submit(class="col s10 offset-s1 waves-effect waves-light btn darken-4")}}
-	      	{# <a class="col s10 offset-s1 waves-effect waves-light btn darken-4" v-on:click="login()">登陆</a> #}
-	      </div>
+	       </div>
 </form>
 </div>
 </div> 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 <script src="{{url_for('static', filename='js/style.js')}}" type="text/javascript"></script>
-=======
-	<div class="login" id="login">
-		<div class="lo-title">
-			<label class="tag">SIGN IN</label>
-			<label class="icon"></label>
-		</div>
-		<div class="lo-container">
-			<form method="POST">
-				{{form.hidden_tag()}}
-				{{form.username(class="form-control1")}}
-				{{form.password(class="form-control2")}}
-				{{form.remember_me(class="check")}}
-				{{form.submit(class="form-control2")}}
-				<!-- <input type="text" class="form-control1" placeholder="Search">
-				<input type="text" class="form-control2" placeholder="Search">
-				<div class="checkbox">
-					<span class="icon"></span>
-					<input type="check">Keep alive</input>
-				</div>
-				<input type="submit" class="form-control3" placeholder="Search"> -->
-
-			</form>
-		</div>
-	</div><!--login finish-->
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
 </body>
 </html>

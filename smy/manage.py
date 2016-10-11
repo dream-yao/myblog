@@ -21,14 +21,11 @@ def test():
 	"""Run the unit tests"""
 	import unittest 
 	tests = unittest.TestLoader().discover('tests')
-	unittest.TextTestRunner(verbosity=2).run(tests)
-<<<<<<< HEAD
+	unittest.TextTestRunner(verbosity=2).run(tests) 
 	manager.add_command("shell", Shell(make_context=make_shell_context))
 	manager.add_command("db", MigrateCommand)
-=======
-manager.add_command("shell", Shell(make_context=make_shell_context))
-manager.add_command("db", MigrateCommand)
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
+        manager.add_command("shell", Shell(make_context=make_shell_context))
+        manager.add_command("db", MigrateCommand)
 
 if __name__ == '__main__':
 	manager.run()

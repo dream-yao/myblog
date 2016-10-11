@@ -1,130 +1,3 @@
-<<<<<<< HEAD
-{# {% extends "base.html" %}
-{% block mainbody %} #}
-{# 
-<div class="container">
-<div class="row"> #}
-	{# <div class="col-md-12">
-		<div style="box-shadow:5px 5px 20px #CCC;background-color:white;padding:20px 30px;margin-bottom:40px;">
-		<h2 class="text-center">TO WRITE A BLOG!</h2> #}
-=======
-{% extends "base.html" %}
-{% block mainbody %}
-{# 
-<div class="container">
-<div class="row"> #}
-	<div class="col-md-12">
-		<div style="box-shadow:5px 5px 20px #CCC;background-color:white;padding:20px 30px;margin-bottom:40px;">
-		<h2 class="text-center">TO WRITE A BLOG!</h2>
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
-		{# {% if messages %}
-		{% for message in messages %}
-		<p class="alert alert-warning">{{ message }}</p>
-		{% endfor %}
-		{% endif %}
-		{% macro render_field(field) %}
-		{% for error in field.errors %}
-		{{ error }}
-		{% endfor %}
-		{% endmacro %} #}
-<<<<<<< HEAD
-			{# <form class="form-horizontal" method="POST"> #}
-				{# {{ form.csrf_token }} #}
-      {#   {{form.hidden_tag()}}
-=======
-			<form class="form-horizontal" method="POST">
-				{# {{ form.csrf_token }} #}
-        {{form.hidden_tag()}}
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
-				<div class="form-group">
-    					<label for="inputEmail3" class="col-sm-1 control-label">{{ form.title.label }}</label>
-    						<div class="col-sm-11">
-      						{{ form.title(class="form-control",placeholder="the title") }}
-   						 </div>
-  			</div>
-  			<div class="form-group">
-    					<label for="inputEmail3" class="col-sm-1 control-label">{{ form.body.label }}</label>
-    						<div class="col-sm-11">
-      						{{ form.body(class="form-control",placeholder="the body") }}
-   						 </div>
-<<<<<<< HEAD
-  			</div> #}
-=======
-  			</div>
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
-  				{# <!--<div class="form-group">
-    					<label for="inputEmail3" class="col-sm-1 control-label">{{ form.summury.label }}</label>
-    						<div class="col-sm-11">
-      						{{ form.summury(class="form-control",placeholder="the summury") }}
-   						 </div>
-  				</div>--> #}
-  				
-<<<<<<< HEAD
-                     {#    <div class="form-group">
-=======
-                        <div class="form-group">
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
-                          <label for="inputEmail3" class="col-sm-1 control-label">{{ form.category.label }}</label>
-                              <div class="col-sm-11">
-                                  {% for category in the_category %}
-                                  <div class="col-md-3"><a class="btn btn-info btn-large btn-block col-md-3 form-btn write-form-btn cates">{{ category.tag }}</a>
-                                  </div>
-                                  {% endfor %}
-                                  <div class="col-md-3"><a class="btn btn-info btn-large btn-block col-md-3 form-add write-form-btn">增加tag <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-                                  </div>
-                              </div>
-                        </div>
-                        <div class="form-group" id="form_category" style="display:block">
-                         <label for="inputEmail3" class="col-sm-1 control-label">{{ form.category.label }}</label>
-                <div class="col-sm-11">
-                  {{ form.category(class="form-control",placeholder="the category", id="categorys") }}
-               </div>
-<<<<<<< HEAD
-          </div> #}
-  				
-  				<!--<input type="submit" value="Go" class="btn btn-large btn-block btn-primary">-->
-         
-        {#   {{form.submit(class="btn btn-large btn-block btn-primary")}}
-=======
-          </div>
-  				
-  				<!--<input type="submit" value="Go" class="btn btn-large btn-block btn-primary">-->
-         
-          {{form.submit(class="btn btn-large btn-block btn-primary")}}
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
-			</form>
-			
-		</div>
-		
-<<<<<<< HEAD
-  	</div> #}
-=======
-  	</div>
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
-  	
-{# </div>
-</div> #}
-<script type="text/javascript">
-<<<<<<< HEAD
-// window.onload = function(){
-//   console.log('hrllo')
-//   var cates = document.getElementsByClassName("cates");
-//   var cate = document.getElementById("categorys");
-//   for (var i=0;i<cates.length;i++)
-//    {
-//     cates[i].onclick = function(){
-//       cate.value = cate.value+this.innerHTML+',';
-//     }
-//    }
-// }
-
-</script>>
-
-
-
-{# 
-{% endblock %}
- #}
 <!DOCTYPE html>
 <html>
 <head>
@@ -160,7 +33,6 @@
         {{form.hidden_tag()}}
     <div class="container valign-wrapper">
     {{ form.title(style="text-align: center;",placeholder="请输入标题...") }}
-          {# <input type="text" name="" placeholder="" style="text-align: center;" /> #}
     </div>
     {{ form.body(style="min-height: 500px")}}
     {# <textarea id="textarea2" style="min-height: 500px">
@@ -169,7 +41,6 @@
     <div class="cate-add">
       <p>文章标签（添加Tag，你的内容能被更多人看到）</p>
       {{ form.category(class="form-control",placeholder="the category", id="categorys") }}
-      {# <input type="text" name="" class="form-control"/> #}
       <p>（最多添加5个标签，多个标签之间用“,”分隔）</p>
       <ul class="cate-list" style="clear: both;">
         <li><label style="line-height: 36px;color: #000;font-size: 10px;">常用标签</label></li>
@@ -183,13 +54,12 @@
       <div style="clear: both;width: 100%;margin-top: 100px;">
         <ul class="cate-pub" style="width: 37%;margin: 0 auto;">
         <li>{{form.submit(class="valign modal-trigger waves-effect waves-light btn")}}</li>
-          {# <li><a class="valign modal-trigger waves-effect waves-light btn">发布文章</a></li> #}
           <li><a class="valign modal-trigger waves-effect waves-light btn">保存</a></li>
           <li><a class="valign modal-trigger waves-effect waves-light btn">舍弃</a></li>
         </ul>
       </div>
 </form>
-      <script type="text/javascript" src="http://cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="{{url_for('static', filename='js/wangEditor.min.js')}}"></script>
 <script type="text/javascript">
@@ -197,8 +67,6 @@
     // editor.create();
 </script>
 <script type="text/javascript">
-=======
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
 window.onload = function(){
   console.log('hrllo')
   var cates = document.getElementsByClassName("cates");
@@ -213,13 +81,6 @@ window.onload = function(){
 
 </script>>
 
-<<<<<<< HEAD
     <!--<script type="text/javascript" src="../dist/js/wangEditor.min.js"></script>-->
 </body>
-</html>
-=======
-
-
-
-{% endblock %}
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
+</html> 

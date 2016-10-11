@@ -18,12 +18,9 @@ def index():
     # ties.append(Tie.query.filter_by(post_id=i.id).all())
     ties = Tie.query.all()
     cates = Category.query.all()
-<<<<<<< HEAD
     for ca in cates:
         ca.count = Tie.query.filter(Tie.cate_id == ca.id).count()
     db.session.commit()
-=======
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
     return render_template('index.html', posts=posts, pagination=pagination, ties=ties, cates=cates)
 
 
@@ -67,13 +64,10 @@ def internal_server_error(e):
 def writepost():
     form = PostForm(request.form)
     cate = Category.query.all()
-<<<<<<< HEAD
     flash('成功1')
     if form.validate_on_submit():
         flash('成功')
-=======
     if form.validate_on_submit():
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
         # fo = form.category.data.split(',')
         # for i in fo[0:-1]:
         #     c = Category.query.filter_by(tag=i).first()
@@ -90,13 +84,10 @@ def writepost():
             if c is not None:
                 tie = Tie(post_id=pos.id, cate_id=c.id)
                 db.session.add(tie)
-<<<<<<< HEAD
         # for ca in cate:
         #     ca.count = Tie.query.filter(Tie.cate_id == ca.id).count()
-=======
         for ca in cate:
             ca.count = Tie.query.filter(Tie.cate_id == ca.id).count()
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
         db.session.commit()
         return redirect(url_for('main.index'))
     return render_template('writepost.html', form=form, the_category=cate)
@@ -138,46 +129,37 @@ def edit(id):
         #         db.session.add(pos)
         # db.session.commit()
         # return redirect(url_for('main.index'))
-<<<<<<< HEAD
         # pos = Post(title=form.title.data, body=form.body.data)
         # db.session.add(pos)
         Tie.query.filter(Tie.post_id == id).delete()
         Post.query.filter(Post.id == id).update({'title' : form.title.data,'body' : form.body.data})
-=======
         pos = Post(title=form.title.data, body=form.body.data)
-        db.session.add(pos)
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
+        db.session.add(pos) 
         fo = form.category.data.split(',')
         for i in fo[0:-1]:
             c = Category.query.filter_by(tag=i).first()
             if c is not None:
-<<<<<<< HEAD
                 tie = Tie(post_id=id, cate_id=c.id)
                 db.session.add(tie)
                 # Tie.query.filter(Tie.post_id == id).update({'cate_id' : c.id})
         # for ca in cate:
         #     ca.count = Tie.query.filter(Tie.cate_id == ca.id).count()
-=======
                 tie = Tie(post_id=pos.id, cate_id=c.id)
                 db.session.add(tie)
         for ca in cate:
             ca.count = Tie.query.filter(Tie.cate_id == ca.id).count()
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
         db.session.commit()
         return redirect(url_for('main.index'))
 
     form.title.data = po.title
     form.body.data = po.body
     poss = Category.query.join(Tie).join(Post).filter(Post.id == id).all()
-<<<<<<< HEAD
     if poss is not None:
         # form.category.data = poss[0].tag
         for pos in poss:
             form.category.data = str(form.category.data) + ',' + str(pos.tag) 
-=======
     for pos in poss:
         form.category.data = str(form.category.data) + str(pos.tag) + ','
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
         # pos.tag返回的是unicode值
     return render_template('editpost.html', form=form, the_category=cate)
 
@@ -187,9 +169,4 @@ def delete(id):
     post = Post.query.filter(Post.id == id).first()
     db.session.delete(post)
     db.session.commit()
-    return redirect(url_for('main.index'))
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 44a0ed4adc99a4c112858a1046f85a2852d459b7
+    return redirect(url_for('main.index')) 
