@@ -4,51 +4,54 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 	{% block title %}{% endblock title %}
-	{# <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/base.css')}}"> #}
-	
 	<link rel="stylesheet" href="{{url_for('static', filename='css/materialize.min.css')}}" media="screen,projection">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" media="screen,projection">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style type="text/css">
-      .parallax-container{min-height: 255px;}
-    </style>
+       <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" media="screen,projection">
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <style type="text/css">
+         .parallax-container{min-height: 255px;}
+         .main{margin: 20px;margin-left: 10%;margin-right: 3%;}
+         .card-post{height: 600px;}
+       </style>
 	{{ moment.include_jquery() }}
-    {{ moment.include_moment() }}
-    <!--使用中文,默认是英语的-->
-    {{ moment.lang("zh-CN") }} 
+      {{ moment.include_moment() }}
+       <!--使用中文,默认是英语的-->
+      {{ moment.lang("zh-CN") }} 
 	{{ pagedown.include_pagedown() }}
 </head>
 <body>
+<!-- login begin -->
+{% if current_user.is_authenticated %}
 <div class="login">
-  <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large red">
-      <i class="large material-icons">mode_edit</i>
-    </a>
-    <ul>
-      <li><a class="btn-floating red" href="/writepost"><i class="material-icons">insert_chart</i></a></li>
-      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-    </ul>
-  </div>
+    <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red" href="/writepost">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <!-- <ul>
+            <li><a class="btn-floating red" href="/writepost"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul> -->
+    </div>
 </div>
+{% endif %}
 <!-- nav begin -->
-<nav class="white" role="navigation" style="height: 80px;line-height: 80px;margin-top: -20px;">
+<nav class="white" role="navigation">
     <div class="nav-wrapper" style="width: 80%;margin: 0 auto;">
-	      <a href="#" class="brand-logo" style="font-size: 35px;color: #4db6ac">SMY</a>
-	      <ul class="middle hide-on-med-and-down" style="margin-left: 100px; ">
-	          <li><a href="#" style="font-size: 20px;">MYBLOG</a></li>
-	          <li><a href="#" style="font-size: 20px;">ABOUTME</a></li>
-	      </ul>
-	      {% if current_user.is_authenticated %}
-        <div class="right username"><a href="/logout" style="font-size: 20px;color: #000;">{{current_user.username}}</a>
-        
-        </div>
+        <a href="#" class="brand-logo" style="font-size: 35px;color: #4db6ac">SMY</a>
+        <ul class="middle hide-on-med-and-down" style="margin-left: 100px; ">
+	      <li><a href="#" style="font-size: 20px;">MYBLOG</a></li>
+	      <li><a href="#" style="font-size: 20px;">ABOUTME</a></li>
+        </ul>
+        {% if current_user.is_authenticated %}
+        <div class="right username">
+            <a href="/logout" style="font-size: 20px;color: #000;">{{current_user.username}}</a>
+         </div>
         {% else %}
-				 <div class="right username"><a href="{{url_for('main.login')}}" style="font-size: 20px;color: #000;">login</a>
-			{% endif %}
-
+        <div class="right username">
+            <a href="{{url_for('main.login')}}" style="font-size: 20px;color: #000;">login</a>
+        </div>
+        {% endif %}
         <ul id="nav-mobile" class="side-nav">
             <li><a href="#">Python</a></li>
             <li><a href="#">ABOUTME</a></li>
@@ -63,43 +66,44 @@
             <br><br>
             <h1 class="header center teal-text text-lighten-2">For TuCao&amp;Study</h1>
             <div class="row center">
-              <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
             </div>
             <div class="row center">
-              <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+                <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
             </div>
           <br><br>
+        </div>
     </div>
-    </div>
-        <div class="parallax"><img src="{{url_for('static', filename='img/background1.jpg')}}" alt="Unsplashed background img 1">
+    <div class="parallax"><img src="{{url_for('static', filename='img/background1.jpg')}}" alt="Unsplashed background img 1">
     </div>
 </div>
-	{% block mainbody %}
-	{% endblock mainbody %}
+<!-- mainbody begin -->
+{% block mainbody %}
+{% endblock mainbody %}
 <!-- footer begin -->
 <footer class="page-footer blue-grey">
     <div class="container">
         <div class="row">
-              <div class="col l6 s12">
-                  <h5 class="white-text">Designed by the <a href="#" style="color: #4db6ac;">SMY</a></h5>
-                  <p class="grey-text text-lighten-4" style="margin-top: 30px;">@SERVER BY NGINX AND POWER BY DIGITALOCEAN.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                  <h5 class="white-text">CONTACT ME</h5>
-                  <ul>
+            <div class="col l6 s12">
+                <h5 class="white-text">Designed by the <a href="#" style="color: #4db6ac;">SMY</a></h5>
+                <p class="grey-text text-lighten-4" style="margin-top: 30px;">@SERVER BY NGINX AND POWER BY DIGITALOCEAN.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">CONTACT ME</h5>
+                <ul>
                     <li style="color: #4db6ac"><i class="tiny material-icons" style="padding-right: 10px;">textsms</i><a class="text-lighten-3" href="#!" style="color: #4db6ac">WECHAT</a></li>
                     <li style="color: #4db6ac"><i class="tiny material-icons" style="padding-right: 10px;">visibility</i><a class="text-lighten-3" href="#!" style="color: #4db6ac">WEIBO</a></li>
                     <li style="color: #4db6ac"><i class="tiny material-icons" style="padding-right: 10px;">assignment_ind</i><a class="text-lighten-3" href="#!" style="color: #4db6ac">GITHUB</a></li>
                     <li style="color: #4db6ac"><i class="tiny material-icons" style="padding-right: 10px;">perm_identity</i><a class="text-lighten-3" href="#!" style="color: #4db6ac">EMAIL:544872415@qq.com</a></li>
-                  </ul>
-              </div>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="footer-copyright">
-      <div class="container">
-      © 2016 Copyright Text
-     <!--  <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
-      </div>
+        <div class="container">
+            © 2016 Copyright Text
+            <!--  <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+        </div>
     </div>
 </footer>
 <!-- footer finish -->

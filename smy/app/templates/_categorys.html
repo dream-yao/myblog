@@ -1,15 +1,15 @@
 <div class="col s3 con-left" style="float:right;">
-	<div class="share mrl the-font" style="background-color:#FFF;box-shadow:5px 5px 20px #CCC;width:260px;">
-		<div style="padding:10px;">
-		    <div style="border-bottom:1px solid #DAD4D4;;padding:10px 10px;">
-		      <h5><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>CATEGORY</h5>
-		    </div>
-			<ul>
-			{% for cate in cates %}
-			<li class="presentation" style="padding-top:0px;"><a href="/category/{{cate.tag}}" ><p><span style="font-size:15px;">{{cate.tag}}</span><span style="float:right">{{cate.count}}</span></p></a></li>
-			{% endfor %}
-			</ul>
-		</div>
-	</div>
+    <div class="share mrl the-font" style="background-color:#FFF;box-shadow:5px 5px 20px #CCC;width:260px;">
+        <div style="padding:10px;">
+            <div style="border-bottom:1px solid #DAD4D4;;padding:10px 10px;">
+                <h5><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>CATEGORY</h5>
+            </div>
+            <ul>
+                {% for cate in cates %}
+	    <li class="presentation" style="padding-top:0px;"><a href="/category/{{cate.tag}}" ><p><span style="font-size:15px;">{{cate.tag}}</span><span style="float:right">{{cate.count}}</span></p></a></li>
+	    {% endfor %}
+	</ul>
+         </div>
+    </div>
 </div>
 

@@ -56,6 +56,16 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
   .con-left {
     display: none;
   }
+  .main{
+    margin: 0 !important;
+  }
+  .main .col{
+    float: none !important;
+    margin: 0 auto !important;
+  }
+  .main .col .card-post{
+    height: 300px;
+  }
 }
 
 .icon-block {

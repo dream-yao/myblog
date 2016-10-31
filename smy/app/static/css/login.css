@@ -2,7 +2,20 @@
 body{
 	background: url('http://cdn01.baidu-img.cn/timg?image_search&quality=80&size=b10000_10000&sec=1474447892&di=582b24ff88a0331d93afaa5d49661a9f&imgtype=jpg&src=http%3A%2F%2Fimg0.bdstatic.com%2Fimg%2Fimage%2Fshouye%2Fxinshouye%2Fzhongqiujie915.JPG');
 }
-
+.row .col{
+    float: none !important;
+}
+.row .col.s4 {
+    margin: 0 auto;
+}
+@media only screen and (max-width : 500px) {
+	.login-panel{
+		margin-top: 50% !important;
+	}
+	.row .col.s4{
+	width: 62.33333%;
+}
+}
 .login{
 	width: 383px;
 	height: 275px;

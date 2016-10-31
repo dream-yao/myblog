@@ -1,23 +1,22 @@
 {% for post in  posts%}
-<div class="col s9 m4" style="width: 70%;margin-top: 50px;">
-   <div class="card blue-grey darken-1" style="height: 600px;">
-    <div class="card-content white-text"style="height:80%;">
-      <span class="card-title"><a href="{{url_for('main.post', id=post.id)}}">{{ post.title }}</a>
-      </span>
-      <p><small><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><span style="color:#8C8C8C;">{{ post.timestamp }}</span></small>
-      </p>
-      <p>{{ post.body | safe | truncate(100, True) }}</p>{# 用于限制文章首页 #}
-     </div>
-    <div class="card-action">
-    {% for tie in ties%}
-        {% if  tie.pos.id == post.id%}
-    		<div style="border-top:1px solid #EBEBEB;padding:10px 5px;margin-top:20px; float: left">
-    		<a href="/category/{{ tie.category.tag }}"><span class="label label-default"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> 
-    		{{ tie.category.tag }}</span></a>
-    		</div>
-		    {% endif %}
-	  {% endfor %}
-    </div>
-  </div> 
+<div class="col s9 m4 post" style="width: 70%;">
+    <div class="card blue-grey darken-1 card-post" style="">
+        <div class="card-content white-text" style="height:80%;">
+            <span class="card-title"><a href="{{url_for('main.post', id=post.id)}}">{{ post.title }}</a>
+            </span>
+        <p><small><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><span style="color:#8C8C8C;">{{ post.timestamp }}</span></small>
+        </p>
+        <p>{{ post.body | safe | truncate(100, True) }}</p>{# 用于限制文章首页 #}
+        </div>
+        <div class="card-action">
+        {% for tie in ties%}
+            {% if  tie.pos.id == post.id%}
+	    <div style="border-top:1px solid #EBEBEB;padding:10px 5px;margin-top:20px; float: left">
+	        <a href="/category/{{ tie.category.tag }}"><span class="label label-default"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> {{ tie.category.tag }}</span></a>
+	    </div>
+	{% endif %}
+        {% endfor %}
+        </div>
+    </div> 
 </div>
 {% endfor %}
