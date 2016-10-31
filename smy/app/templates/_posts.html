@@ -4,9 +4,13 @@
         <div class="card-content white-text" style="height:80%;">
             <span class="card-title"><a href="{{url_for('main.post', id=post.id)}}">{{ post.title }}</a>
             </span>
-        <p><small><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><span style="color:#8C8C8C;">{{ post.timestamp }}</span></small>
-        </p>
-        <p>{{ post.body | safe | truncate(100, True) }}</p>{# 用于限制文章首页 #}
+            <p><small><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><span style="color:#8C8C8C;">{{ post.timestamp }}</span></small>
+            </p>
+            {% if post.body_html %}
+            <p>{{ post.body_html | safe | truncate(200, True) }}</p>{# 用于限制文章首页 #}
+            {% else %}
+            <p>{{ post.body }}</p>
+            {% endif %}
         </div>
         <div class="card-action">
         {% for tie in ties%}

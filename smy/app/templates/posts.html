@@ -13,8 +13,12 @@
 	    <h2>{{ post.title }}</h2>
 	        <p><small><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><span style="color:#8C8C8C;">{{ post.timestamp }}</span></small>
 	        </p> 
-	        <p>{{ post.body|safe }}</p>
-	            {% for tie in  ties%}
+	         {% if post.body_html %}
+                      <p>{{ post.body_html | safe }}</p>{# 用于限制文章首页 #}
+                      {% else %}
+                      <p>{{ post.body }}</p>
+                      {% endif %}
+	          {% for tie in  ties%}
 		<div style="border-top:1px solid #EBEBEB;padding:10px 5px;margin-top:20px;float:left;">
 		    <a href="/category/{{ tie.category.tag }}"><span class="label label-default"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> {{ tie.category.tag }}</span></a>
 		</div>
