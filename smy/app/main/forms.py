@@ -12,11 +12,13 @@ class LoginForm(Form):
     remember_me = BooleanField('Keep me logined in')
     submit = SubmitField('Login')
 
+
 class PostForm(Form):
     title=StringField("Title",validators=[Required()])
     body = PageDownField("What's on your mind?", validators=[Required()])
     category=StringField("CATEGORY",validators=[Required()])
     submit = SubmitField('Submit')
+
 
 class EditForm(Form):
     title=StringField("Title",validators=[Required()])

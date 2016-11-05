@@ -10,15 +10,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body style="background: url(http://cdn01.baidu-img.cn/timg?image_search&quality=80&size=b10000_10000&sec=1475716480&di=9227038e2b822edc84ffa3e1464981fe&imgtype=jpg&src=http%3A%2F%2Fimg0.bdstatic.com%2Fimg%2Fimage%2Fshouye%2Fxinshouye%2FPC928.jpg)">
-{% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-   <ul class=flashes>
-       {% for category, message in messages %}
-       <li class="{{ category }}">{{ message }}</li>
-       {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}
 <div class="row login-panel" style="margin-top: 90px">
     <div class="col s4">
         <form class="card-panel login-panel" method="POST">

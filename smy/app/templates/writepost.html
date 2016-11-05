@@ -22,9 +22,6 @@
         .cate-add input:focus ~ .cate-list  li{
           visibility: visible;
         }
-        .cate-list {
-          /*visibility: hidden;*/
-        }
     </style>
 </head>
 <body style="padding:0 20px;">
@@ -37,33 +34,23 @@
         {{ form.csrf_token }}
         {{form.hidden_tag()}}
     <div class="container valign-wrapper">
-    {{ form.title(style="text-align: center;",placeholder="请输入标题...") }}
-          {# <input type="text" name="" placeholder="" style="text-align: center;" /> #}
+        {{ form.title(style="text-align: center;",placeholder="请输入标题...") }}
     </div>
     {{ form.body(style="min-height: 500px")}}
-    {# <div id="textarea1" style="min-height: 500px"> #}
-    {# {{form.body(style="min-height: 500px",class="wangEditor-txt",contenteditable="true")}} #}
-    {# </div> #}
     <div class="cate-add">
-      <p>文章标签（添加Tag，你的内容能被更多人看到）</p>
-      {{ form.category(class="form-control",placeholder="the category", id="categorys") }}
-      {# <input type="text" name="" class="form-control"/> #}
-      <p>（最多添加5个标签，多个标签之间用“,”分隔）</p>
-      <ul class="cate-list" style="clear: both;">
-        <li><label style="line-height: 36px;color: #000;font-size: 10px;">常用标签</label></li>
-         {% for category in the_category %}
-        <li><a class="waves-effect waves-light btn cates">{{ category.tag }}</a></li>
-        {% endfor %}
-        <li><a class="waves-effect waves-light btn">增加tag<i class="material-icons right">add</i></a></li>
-      </ul>
+        <p>文章标签（添加Tag，你的内容能被更多人看到）</p>
+            {{ form.category(class="form-control",placeholder="the category", id="categorys") }}
+        <p>（最多添加5个标签，多个标签之间用“,”分隔）</p>
+        <ul class="cate-list" style="clear: both;">
+            <li><label style="line-height: 36px;color: #000;font-size: 10px;">常用标签</label></li>
+            {% for category in the_category[0:5] %}
+                <li><a class="waves-effect waves-light btn cates">{{ category.tag }}</a></li>
+            {% endfor %}
+        </ul>
     </div>
-      
-      <div style="clear: both;width: 100%;margin-top: 100px;">
+    <div style="clear: both;width: 100%;margin-top: 100px;">
         <ul class="cate-pub" style="width: 37%;margin: 0 auto;">
-        <li>{{form.submit(class="valign modal-trigger waves-effect waves-light btn")}}</li>
-          {# <li><a class="valign modal-trigger waves-effect waves-light btn">发布文章</a></li> #}
-          <li><a class="valign modal-trigger waves-effect waves-light btn">保存</a></li>
-          <li><a class="valign modal-trigger waves-effect waves-light btn">舍弃</a></li>
+            <li>{{form.submit(class="valign modal-trigger waves-effect waves-light btn")}}</li>
         </ul>
       </div>
 </form>
@@ -72,22 +59,23 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="{{url_for('static', filename='js/wangEditor.min.js')}}"></script>
 <script type="text/javascript">
-    // var editor = new wangEditor('textarea1');
-    // editor.create();
-</script>
-<script type="text/javascript">
-window.onload = function(){
-  console.log('hrllo')
   var cates = document.getElementsByClassName("cates");
   var cate = document.getElementById("categorys");
+  var title = document.getElementById("title");
+  var body = document.getElementById("flask-pagedown-body");
+  var tag = document.getElementById("categorys");
+  var clean = document.getElementsByClassName("clean");
   for (var i=0;i<cates.length;i++)
    {
     cates[i].onclick = function(){
       cate.value = cate.value+this.innerHTML+',';
     }
    }
-}
-
+   clean.onclick = function(){
+    title.value = '';
+    body.value = '';
+    tag.value = '';
+   }
 </script> 
 </body>
 </html>
