@@ -95,6 +95,7 @@ def edit(id):
     form = EditForm(request.form)
     cate = Category.query.order_by(Category.count.desc()).all()
     po = Post.query.get_or_404(id)
+    a = []
     if form.validate_on_submit():
         Tie.query.filter(Tie.post_id == id).delete()
         po.title = form.title.data
@@ -120,7 +121,8 @@ def edit(id):
     poss = Category.query.join(Tie).join(Post).filter(Post.id == id).all()
     if poss is not None:
         for pos in poss:
-            form.category.data = str(form.category.data) + ',' + str(pos.tag)   #pos.tag返回的是unicode值
+            a.append(str(pos.tag) )  #pos.tag返回的是unicode值
+    form.category.data = ''.join(a)
     return render_template('editpost.html', form=form, the_category=cate)
 
 @main.route('/deletepost/<id>', methods=['GET', 'POST'])
