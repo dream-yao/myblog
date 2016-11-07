@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>wangEditor2 test</title>
+    <title>SMY-Write</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/wangEditor.min.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/materialize.min.css')}}" media="screen,projection">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" media="screen,projection">
@@ -59,20 +59,11 @@
 <script type="text/javascript">
   var cates = document.getElementsByClassName("cates");
   var cate = document.getElementById("categorys");
-  var title = document.getElementById("title");
-  var body = document.getElementById("flask-pagedown-body");
-  var tag = document.getElementById("categorys");
-  var clean = document.getElementsByClassName("clean");
   for (var i=0;i<cates.length;i++)
    {
     cates[i].onclick = function(){
       cate.value = cate.value+this.innerHTML+',';
     }
-   }
-   clean.onclick = function(){
-    title.value = '';
-    body.value = '';
-    tag.value = '';
    }
 </script> 
 </body>
