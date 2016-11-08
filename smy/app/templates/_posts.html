@@ -7,7 +7,7 @@
             <p><small><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><span style="color:#8C8C8C;">{{ post.timestamp }}</span></small>
             </p>
             {% if post.body_html %}
-            <p>{{ post.body_html | safe | truncate(200, True) }}</p>{# 用于限制文章首页 #}
+            <p>{{ post.body_html | safe | truncate(400, True) }}</p>{# 用于限制文章首页 #}
             {% else %}
             <p>{{ post.body }}</p>
             {% endif %}

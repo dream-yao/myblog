@@ -122,7 +122,7 @@ def edit(id):
     if poss is not None:
         for pos in poss:
             a.append(str(pos.tag) )  #pos.tag返回的是unicode值
-    form.category.data = ''.join(a)
+    form.category.data = ','.join(a)
     return render_template('editpost.html', form=form, the_category=cate)
 
 @main.route('/deletepost/<id>', methods=['GET', 'POST'])
