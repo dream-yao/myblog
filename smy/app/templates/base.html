@@ -46,9 +46,9 @@ var visitor="这位怪蜀黍";
 <!-- nav begin -->
 <nav class="white" role="navigation">
     <div class="nav-wrapper" style="width: 80%;margin: 0 auto;">
-        <a href="#" class="brand-logo" style="font-size: 35px;color: #4db6ac">SMY</a>
+        <a href="{{url_for('main.index')}}" class="brand-logo" style="font-size: 35px;color: #4db6ac">SMY</a>
         <ul class="middle hide-on-med-and-down" style="margin-left: 100px; ">
-	      <li><a href="#" style="font-size: 20px;">MYBLOG</a></li>
+	      <li><a href="{{url_for('main.index')}}" style="font-size: 20px;">MYBLOG</a></li>
 	      <li><a href="#" style="font-size: 20px;">ABOUTME</a></li>
         </ul>
         {% if current_user.is_authenticated %}
@@ -101,7 +101,7 @@ var visitor="这位怪蜀黍";
                 <ul>
                     <li style="color: #4db6ac"><i class="tiny material-icons" style="padding-right: 10px;">textsms</i><a class="text-lighten-3" href="#!" style="color: #4db6ac">WECHAT</a></li>
                     <li style="color: #4db6ac"><i class="tiny material-icons" style="padding-right: 10px;">visibility</i><a class="text-lighten-3" href="#!" style="color: #4db6ac">WEIBO</a></li>
-                    <li style="color: #4db6ac"><i class="tiny material-icons" style="padding-right: 10px;">assignment_ind</i><a class="text-lighten-3" href="#!" style="color: #4db6ac">GITHUB</a></li>
+                    <li style="color: #4db6ac"><i class="tiny material-icons" style="padding-right: 10px;">assignment_ind</i><a class="text-lighten-3" href="https://github.com/dream-yao/" style="color: #4db6ac">GITHUB</a></li>
                     <li style="color: #4db6ac"><i class="tiny material-icons" style="padding-right: 10px;">perm_identity</i><a class="text-lighten-3" href="#!" style="color: #4db6ac">EMAIL:544872415@qq.com</a></li>
                 </ul>
             </div>
