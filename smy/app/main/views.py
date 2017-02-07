@@ -16,6 +16,8 @@ def index():
     cates = Category.query.all()
     for ca in cates:
         ca.count = Tie.query.filter(Tie.cate_id == ca.id).count()
+        if ca.count == 0:
+            db.session.delete(ca)
     db.session.commit()
     cates = Category.query.order_by(Category.count.desc()).all()
     return render_template('index.html', posts=posts, pagination=pagination, ties=ties, cates=cates)
@@ -118,7 +120,7 @@ def edit(id):
         return redirect(url_for('main.index'))
     form.title.data = po.title
     form.body.data = po.body
-    poss = Category.query.join(Tie).join(Post).filter(Post.id == id).all()
+    poss = Category.query.join(Tie).join(Post).filter(Post.id==id).all()
     if poss is not None:
         for pos in poss:
             a.append(str(pos.tag) )  #pos.tag返回的是unicode值

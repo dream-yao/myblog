@@ -61,6 +61,7 @@ class Category(db.Model):
 
 
 class Tie(db.Model):
+    """Relationship between Post and Category"""
     __tablename__ = "ties"
     id = db.Column(db.Integer, primary_key=True)
     post_id = db.Column(db.Integer, db.ForeignKey('posts.id', ondelete='CASCADE'))
